@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Mustache test cases</title>
+    </head>
+    <body>
+
+    <h1>Test cases</h1>
+
+    {{ # views }}
+        <h2>{{ name }}</h2>
+        <ul>
+            {{ # testCases  }}
+                <li>
+                    <a href="/{{name}}/{{.}}">{{ . }}</a>
+                </li>
+            {{ /testCases }}
+        </ul>
+    {{ /views }}
+    
+    </body>
+</html>

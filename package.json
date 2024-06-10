@@ -1,0 +1,15 @@
+{
+  "name": "bycs-status-preview",
+  "version": "1.0.0",
+  "scripts": {
+    "preview": "node --watch-path=./views preview.js"
+  },
+  "type": "module",
+  "author": "Sebastian Rettig <sebastian.rettig@isb.bayern.de>",
+  "license": "MIT",
+  "description": "Mustache Preview System with NodeJS",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mustache-express": "^1.3.2"
+  }
+}
