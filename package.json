@@ -1,5 +1,5 @@
 {
-  "name": "bycs-status-preview",
+  "name": "mustache-preview",
   "version": "1.0.0",
   "scripts": {
     "preview": "node --watch-path=./views preview.js"
