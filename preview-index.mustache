@@ -4,18 +4,35 @@
     </head>
     <body>
 
-    <h1>Test cases</h1>
+    <h1>Views</h1>
 
     {{#views}}
         <h2>{{name}}</h2>
         <ul>
             {{#testCases}}
-                <li>
-                    <a href="?view={{../name}}&testcase={{.}}">{{ . }}</a>
+                <li>                    
+                    {{ . }}
+                    {{#../../layouts}}
+                    <a href="?view={{../../name}}&testcase={{..}}&layout={{.}}">{{.}}</a>
+                    {{/../../layouts}}
                 </li>
             {{/testCases}}
         </ul>
     {{/views}}
     
+    <h1>Partials</h1>
+    {{#partials}}
+        <h2>{{name}}</h2>
+        <ul>
+            {{#testCases}}
+                <li>                    
+                    {{ . }}
+                    {{#../../layouts}}
+                    <a href="?partial={{../../name}}&testcase={{..}}&layout={{.}}">{{.}}</a>
+                    {{/../../layouts}}
+                </li>
+            {{/testCases}}
+        </ul>
+    {{/partials}}
     </body>
 </html>

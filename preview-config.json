@@ -1,8 +1,17 @@
 {
     "paths": {
         "views": "views",
-        "partials": "views/partials",
+        "partials": [
+            {
+                "dir": "views/partials"
+            },
+            {
+                "dir": "external-partials",
+                "namespace": "external/namespace"
+            }
+        ],
         "public": "public",
-        "test-data": "test-data"
+        "test-data": "test-data",
+        "layouts": "layouts"
     }
 }
