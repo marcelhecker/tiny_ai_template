@@ -7,57 +7,70 @@ import mustacheExpress from "mustache-express";
 import mustache from "mustache";
 import { resolve } from "path";
 import bodyParser from "body-parser";
+import config from "./preview-config.json" assert { type: "json" };
+
 import { readdirSync, readFileSync, existsSync } from "fs";
 
 let app = express();
 
-app.set("views", resolve(`views`));
+app.set("views", resolve(config.paths.views));
 app.set("view engine", "mustache");
-app.engine("mustache", mustacheExpress(resolve("views/partials")));
+app.engine("mustache", mustacheExpress(resolve(config.paths.partials)));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Serve static files
+app.use("/", express.static(resolve(config.paths.public)));
+
+app.use("/", (req, res, next) => {
+  if (!req.query.view || !req.query.testcase) {
+    return next();
+  }
+
+  const testCaseFilename = resolve(
+    `${config.paths["test-data"]}/${req.query.view}/${req.query.testcase}.json`
+  );
+
+  if (
+    !existsSync(resolve(`${config.paths.views}/${req.query.view}.mustache`))
+  ) {
+    return res.status(404).send(`unknown view ${req.query.view}`);
+  }
+  if (!existsSync(testCaseFilename)) {
+    return res.status(404).send(`unknown test case ${req.query.testcase}`);
+  }
+
+  res.render(req.query.view, JSON.parse(readFileSync(testCaseFilename)));
+});
+
 app.get("/", (_req, res) => {
-  const views = readdirSync(resolve(`views`))
-    .filter((f) => f.endsWith(".mustache") && f != "index.mustache")
+  const views = readdirSync(resolve(config.paths.views))
+    .filter((f) => f.endsWith(".mustache") && f != "preview-index.mustache")
     .map((f) => f.substring(0, f.length - 9));
 
   res.status(200).send(
-    mustache.render(readFileSync(resolve(`index.mustache`)).toString(), {
-      views: views.map((view) => {
-        let testCases = [];
-        try {
-          testCases = readdirSync(resolve(`test-data/${view}`))
-            .filter((f) => f.endsWith(".json"))
-            .map((f) => f.substring(0, f.length - 5));
-        } catch {
-          // maybe there are no test cases, so we silently ignore errors
-        }
-        return {
-          name: view,
-          testCases,
-        };
-      }),
-    })
+    mustache.render(
+      readFileSync(resolve(`preview-index.mustache`)).toString(),
+      {
+        views: views.map((view) => {
+          let testCases = [];
+          try {
+            testCases = readdirSync(
+              resolve(`${config.paths["test-data"]}/${view}`)
+            )
+              .filter((f) => f.endsWith(".json"))
+              .map((f) => f.substring(0, f.length - 5));
+          } catch {
+            // maybe there are no test cases, so we silently ignore errors
+          }
+          return {
+            name: view,
+            testCases,
+          };
+        }),
+      }
+    )
   );
-});
-
-// Serve static files
-app.use("/", express.static(resolve(`public`)));
-
-app.use("/:view/:testcase", (req, res) => {
-  const testCaseFilename = resolve(
-    `test-data/${req.params.view}/${req.params.testcase}.json`
-  );
-
-  if (!existsSync(resolve(`views/${req.params.view}.mustache`))) {
-    return res.status(404).send(`unknown view ${req.params.view}`);
-  }
-  if (!existsSync(testCaseFilename)) {
-    return res.status(404).send(`unknown test case ${req.params.testcase}`);
-  }
-
-  res.render(req.params.view, JSON.parse(readFileSync(testCaseFilename)));
 });
 
 app.listen(3000, function () {

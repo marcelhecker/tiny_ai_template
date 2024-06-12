@@ -1,0 +1,8 @@
+{
+    "paths": {
+        "views": "views",
+        "partials": "views/partials",
+        "public": "public",
+        "test-data": "test-data"
+    }
+}
