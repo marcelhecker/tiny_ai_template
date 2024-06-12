@@ -3,8 +3,8 @@
  */
 
 import express from "express";
-import mustacheExpress from "mustache-express";
-import mustache from "mustache";
+import handlebars from "handlebars";
+import { engine } from "express-handlebars";
 import { resolve } from "path";
 import bodyParser from "body-parser";
 import config from "./preview-config.json" assert { type: "json" };
@@ -15,7 +15,14 @@ let app = express();
 
 app.set("views", resolve(config.paths.views));
 app.set("view engine", "mustache");
-app.engine("mustache", mustacheExpress(resolve(config.paths.partials)));
+app.engine(
+  "mustache",
+  engine({
+    extname: ".mustache",
+    partialsDir: resolve(config.paths.partials),
+    layoutsDir: resolve("layouts"),
+  })
+);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -49,27 +56,26 @@ app.get("/", (_req, res) => {
     .map((f) => f.substring(0, f.length - 9));
 
   res.status(200).send(
-    mustache.render(
-      readFileSync(resolve(`preview-index.mustache`)).toString(),
-      {
-        views: views.map((view) => {
-          let testCases = [];
-          try {
-            testCases = readdirSync(
-              resolve(`${config.paths["test-data"]}/${view}`)
-            )
-              .filter((f) => f.endsWith(".json"))
-              .map((f) => f.substring(0, f.length - 5));
-          } catch {
-            // maybe there are no test cases, so we silently ignore errors
-          }
-          return {
-            name: view,
-            testCases,
-          };
-        }),
-      }
-    )
+    handlebars.compile(
+      readFileSync(resolve(`preview-index.mustache`)).toString()
+    )({
+      views: views.map((view) => {
+        let testCases = [];
+        try {
+          testCases = readdirSync(
+            resolve(`${config.paths["test-data"]}/${view}`)
+          )
+            .filter((f) => f.endsWith(".json"))
+            .map((f) => f.substring(0, f.length - 5));
+        } catch {
+          // maybe there are no test cases, so we silently ignore errors
+        }
+        return {
+          name: view,
+          testCases,
+        };
+      }),
+    })
   );
 });
 

@@ -6,16 +6,16 @@
 
     <h1>Test cases</h1>
 
-    {{ # views }}
-        <h2>{{ name }}</h2>
+    {{#views}}
+        <h2>{{name}}</h2>
         <ul>
-            {{ # testCases  }}
+            {{#testCases}}
                 <li>
-                    <a href="?view={{name}}&testcase={{.}}">{{ . }}</a>
+                    <a href="?view={{../name}}&testcase={{.}}">{{ . }}</a>
                 </li>
-            {{ /testCases }}
+            {{/testCases}}
         </ul>
-    {{ /views }}
+    {{/views}}
     
     </body>
 </html>
