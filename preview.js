@@ -42,7 +42,7 @@ const hdlbrs = create({
   extname: ".mustache",
   partialsDir: config.paths.partials,
   layoutsDir: resolve("layouts"),
-  config: config.helpers,
+  helpers: config.helpers,
 });
 app.engine("mustache", hdlbrs.engine);
 
