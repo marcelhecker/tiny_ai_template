@@ -1,6 +1,7 @@
 # Mustache Preview System with NodeJS
 
-The repository demonstrates how to create a preview system for Mustache templates. The templates are rendered with a set of preview data objects.
+A simple preview system for Mustache templates.
+The templates are rendered with a set of preview data objects.
 
 ## Requirements
 
@@ -8,8 +9,7 @@ You need modern NodeJS version (>= 20).
 
 ## Installation
 
-- Clone the repo.
-- Install the dependencies (run `npm install`).
+- Install `mustache-preview` as a dev dependency. (`npm install -D mustache-preview).
 
 ## How to use it
 
@@ -17,5 +17,42 @@ You need modern NodeJS version (>= 20).
 - Create Mustache partials in the `views/partials` directory.
 - Create test data in JSON files: `test-data/<VIEW>/<TESTCASENAME>.json`, e.g. `test-data/my-view/logged-off.json`
 - Create static files (CSS, images, etc.) in the `public` directory.
-- Run `npm run preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
-- When there are changes in the Mustache templates, the preview server automatically reloads.
+- Create layouts in the `layouts` directory.
+- Create a preview configuration `preview.config.mjs` (see below).
+- Run `npx mustache-preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
+
+## Parameters
+
+- `-c <CONFIG_FILE>`, `--config <CONFIG_FILE>` a custom configuration filename
+- `-p <PORT>`, `--port <PORT>` a custom port
+
+## Configuration
+
+All paths are relative to the current working directory when running `npx mustache-preview`.
+
+```js
+export default {
+  paths: {
+    views: "views",
+    partials: [
+      {
+        dir: "views/partials",
+      },
+      {
+        dir: "external-partials",
+        namespace: "external/namespace",
+      },
+    ],
+    public: "public",
+    "test-data": "test-data",
+    layouts: "layouts",
+  },
+  helpers: {
+    str: (content) => content.fn(this),
+    quote: (content) => content.fn(this),
+    pix: (content) => content.fn(this),
+    userdate: (content) => content.fn(this),
+    shortentext: (content) => content.fn(this),
+  },
+};
+```

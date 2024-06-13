@@ -8,6 +8,9 @@
   "author": "Sebastian Rettig <sebastian.rettig@isb.bayern.de>",
   "license": "MIT",
   "description": "Mustache Preview System with NodeJS",
+  "repository": {
+    "url": "https://github.com/sr258/mustache-preview"
+  },
   "bin": {
     "mustache-preview": "preview.js"
   },
