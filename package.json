@@ -2,7 +2,7 @@
   "name": "mustache-preview",
   "version": "0.2.0",
   "scripts": {
-    "preview": "node --watch-path=./views preview.js"
+    "preview": "node preview.js"
   },
   "type": "module",
   "author": "Sebastian Rettig <sebastian.rettig@isb.bayern.de>",

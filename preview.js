@@ -95,7 +95,7 @@ app.use("/", async (req, res, next) => {
   }
 
   writeFileSync(
-    `${config.paths.views}/tmp.mustache`,
+    resolve(`${config.paths.views}/tmp.mustache`),
     `{{>${req.query.partial}}}`
   );
 
@@ -178,7 +178,9 @@ const getWatchDirs = () => [
 ];
 
 app.ws("/", (ws) => {
-  const watcher = chokidar.watch(getWatchDirs());
+  const watcher = chokidar.watch(getWatchDirs(), {
+    ignored: resolve(`${config.paths.views}/tmp.mustache`),
+  });
   watcher.on("all", () => {
     ws.send("refresh");
   });
