@@ -1,6 +1,6 @@
 {
   "name": "mustache-preview",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
     "preview": "node --watch-path=./views preview.js"
   },
@@ -8,8 +8,16 @@
   "author": "Sebastian Rettig <sebastian.rettig@isb.bayern.de>",
   "license": "MIT",
   "description": "Mustache Preview System with NodeJS",
+  "bin": {
+    "mustache-preview": "preview.js"
+  },
   "dependencies": {
+    "commander": "^12.1.0",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2"
-  }
+  },
+  "files": [
+    "preview.js",
+    "preview-index.mustache"
+  ]
 }

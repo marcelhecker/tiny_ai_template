@@ -4,7 +4,7 @@ The repository demonstrates how to create a preview system for Mustache template
 
 ## Requirements
 
-You need modern NodeJS version (>= 18).
+You need modern NodeJS version (>= 20).
 
 ## Installation
 

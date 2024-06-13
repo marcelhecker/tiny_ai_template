@@ -1,23 +1,38 @@
+#!/usr/bin/env node
+
 /**
  * Automatic preview system for Mustache templates
  */
 
 import express from "express";
 import handlebars from "handlebars";
-import { create, engine } from "express-handlebars";
-import { resolve } from "path";
+import { create } from "express-handlebars";
+import { relative, resolve } from "path";
 import bodyParser from "body-parser";
-import config from "./preview-config.json" assert { type: "json" };
-import helpers from "./helpers.js";
-
 import {
   readdirSync,
   readFileSync,
   existsSync,
   writeFileSync,
-  unlink,
   unlinkSync,
 } from "fs";
+import { program } from "commander";
+
+program.option("-c, --config <config>").option("-p, --port <port>");
+program.parse();
+const cliOptions = program.opts();
+const config = (
+  await import(
+    cliOptions.config
+      ? resolve(cliOptions.config)
+      : resolve("./preview.config.mjs")
+  )
+).default;
+
+if (!config) {
+  console.error("No configuration file at ./preview.config.js");
+  exit(1);
+}
 
 let app = express();
 
@@ -27,7 +42,7 @@ const hdlbrs = create({
   extname: ".mustache",
   partialsDir: config.paths.partials,
   layoutsDir: resolve("layouts"),
-  helpers,
+  config: config.helpers,
 });
 app.engine("mustache", hdlbrs.engine);
 
@@ -121,11 +136,11 @@ app.get("/", async (_req, res) => {
     })
     .filter((p) => p.testCases.length > 0);
 
-  console.log(partials);
-
   res.status(200).send(
     handlebars.compile(
-      readFileSync(resolve(`preview-index.mustache`)).toString()
+      readFileSync(
+        resolve(`${import.meta.dirname}/preview-index.mustache`)
+      ).toString()
     )({
       layouts,
       views: views.map((view) => {
@@ -149,6 +164,8 @@ app.get("/", async (_req, res) => {
   );
 });
 
-app.listen(3000, function () {
-  console.log("Preview server started");
+const port = cliOptions.port ? Number.parseInt(cliOptions.port) : 3000;
+
+app.listen(port, function () {
+  console.log(`Preview server started at http://localhost:${port}`);
 });
