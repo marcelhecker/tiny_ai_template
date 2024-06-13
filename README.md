@@ -5,11 +5,11 @@ The templates are rendered with a set of preview data objects.
 
 ## Requirements
 
-You need modern NodeJS version (>= 20).
+You need a modern NodeJS version (>= 20).
 
 ## Installation
 
-- Install `mustache-preview` as a dev dependency. (`npm install -D mustache-preview).
+- Install `mustache-preview` as a dev dependency. (`npm install -D mustache-preview`).
 
 ## How to use it
 
@@ -17,7 +17,7 @@ You need modern NodeJS version (>= 20).
 - Create Mustache partials in the `views/partials` directory.
 - Create test data in JSON files: `test-data/<VIEW>/<TESTCASENAME>.json`, e.g. `test-data/my-view/logged-off.json`
 - Create static files (CSS, images, etc.) in the `public` directory.
-- Create layouts in the `layouts` directory.
+- Create layouts in the `layouts` directory. Layouts can be used to add global CSS stylesheets, JavaScript libraries or surrounding HTML elements, e.g. to indicate that certain themes (contrast mode etc.) are active. Each view and partial can be previewed for each layout.
 - Create a preview configuration `preview.config.mjs` (see below).
 - Run `npx mustache-preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
 
