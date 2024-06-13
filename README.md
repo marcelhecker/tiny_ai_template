@@ -23,8 +23,6 @@ You need a modern NodeJS version (>= 20).
 
 - Install `mustache-preview` as a dev dependency. (`npm install -D mustache-preview`).
 
-## Concepts
-
 ## How to use it
 
 - Create Mustache templates in the `views` directory. (need a `.mustache` extension)
@@ -37,14 +35,14 @@ You need a modern NodeJS version (>= 20).
 
 Check out the minimal [demo project](https://github.com/sr258/mustache-preview-demo).
 
-## Parameters
+## Command line parameters
 
 - `-c <CONFIG_FILE>`, `--config <CONFIG_FILE>` a custom configuration filename
 - `-p <PORT>`, `--port <PORT>` a custom port
 
 ## Configuration
 
-All paths are relative to the current working directory when running `npx mustache-preview`.
+The `preview.config.mjs` file must look this (all paths are relative to the current working directory when running `npx mustache-preview`):
 
 ```js
 export default {
