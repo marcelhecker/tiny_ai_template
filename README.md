@@ -21,6 +21,8 @@ You need modern NodeJS version (>= 20).
 - Create a preview configuration `preview.config.mjs` (see below).
 - Run `npx mustache-preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
 
+Check out the minimal [demo project](https://github.com/sr258/mustache-preview-demo).
+
 ## Parameters
 
 - `-c <CONFIG_FILE>`, `--config <CONFIG_FILE>` a custom configuration filename
