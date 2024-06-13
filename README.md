@@ -1,7 +1,19 @@
 # Mustache Preview System with NodeJS
 
-A simple preview system for Mustache templates.
-The templates are rendered with a set of preview data objects.
+A simple preview system for Mustache templates, inspired by
+[StorybookJS](https://storybook.js.org/). The templates are rendered with a set
+of preview data objects.
+
+![Screenshot](./docs/preview-screenshot.png)
+
+## Features
+
+- auto-reload on template or preview data change
+- multiple "layouts" to support different themes
+- can preview views and partials
+- supports Mustache helpers (uses with [Handlebars](https://handlebarsjs.com/)
+  under the hood)
+- display preview in a preview box or new window
 
 ## Requirements
 
@@ -11,12 +23,14 @@ You need a modern NodeJS version (>= 20).
 
 - Install `mustache-preview` as a dev dependency. (`npm install -D mustache-preview`).
 
+## Concepts
+
 ## How to use it
 
-- Create Mustache templates in the `views` directory.
-- Create Mustache partials in the `views/partials` directory.
-- Create test data in JSON files: `test-data/<VIEW>/<TESTCASENAME>.json`, e.g. `test-data/my-view/logged-off.json`
-- Create static files (CSS, images, etc.) in the `public` directory.
+- Create Mustache templates in the `views` directory. (need a `.mustache` extension)
+- Create Mustache partials in the `views/partials` directory. (need a `.mustache` extension)
+- Create test data in JSON files: `test-data/<VIEW>/<TESTCASENAME>.json`, e.g. `test-data/my-view/logged-off.json`. There's one JSON file per test case.
+- Create static files (resources like CSS, images, etc.) in the `public` directory.
 - Create layouts in the `layouts` directory. Layouts can be used to add global CSS stylesheets, JavaScript libraries or surrounding HTML elements, e.g. to indicate that certain themes (contrast mode etc.) are active. Each view and partial can be previewed for each layout.
 - Create a preview configuration `preview.config.mjs` (see below).
 - Run `npx mustache-preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
@@ -45,10 +59,15 @@ export default {
         namespace: "external/namespace",
       },
     ],
+    /* 
+    also possible:
+    partials: "views/partials"
+    */
     public: "public",
     "test-data": "test-data",
     layouts: "layouts",
   },
+  /* You can also add helper mock implementations that can be used in the templates */
   helpers: {
     str: (content) => content.fn(this),
     quote: (content) => content.fn(this),
