@@ -7,7 +7,7 @@
 import express from "express";
 import handlebars from "handlebars";
 import { create } from "express-handlebars";
-import { relative, resolve } from "path";
+import { resolve } from "path";
 import bodyParser from "body-parser";
 import {
   readdirSync,
@@ -17,6 +17,8 @@ import {
   unlinkSync,
 } from "fs";
 import { program } from "commander";
+import ExpressWs from "express-ws";
+import chokidar from "chokidar";
 
 program.option("-c, --config <config>").option("-p, --port <port>");
 program.parse();
@@ -35,6 +37,7 @@ if (!config) {
 }
 
 let app = express();
+const expressWs = ExpressWs(app);
 
 app.set("views", resolve(config.paths.views));
 app.set("view engine", "mustache");
@@ -162,6 +165,26 @@ app.get("/", async (_req, res) => {
       partials,
     })
   );
+});
+
+const getWatchDirs = () => [
+  resolve(config.paths.views),
+  resolve(config.paths.public),
+  resolve(config.paths["test-data"]),
+  resolve(config.paths.layouts),
+  ...(typeof config.paths.partials === "string"
+    ? [resolve(config.paths.partials)]
+    : config.paths.partials.map((p) => resolve(p.dir))),
+];
+
+app.ws("/", (ws) => {
+  const watcher = chokidar.watch(getWatchDirs());
+  watcher.on("all", () => {
+    ws.send("refresh");
+  });
+  ws.on("close", () => {
+    watcher.close();
+  });
 });
 
 const port = cliOptions.port ? Number.parseInt(cliOptions.port) : 3000;
