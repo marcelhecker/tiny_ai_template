@@ -21,7 +21,7 @@
             }
             function initWebsocket()  {
                 console.log('Connecting to websocket')
-                const ws = new WebSocket("/");
+                const ws = new WebSocket(`ws://${window.location.host}/`);
                 ws.onopen = () => {
                     console.log('Websocket opened');
                     ws.onmessage = e => {
