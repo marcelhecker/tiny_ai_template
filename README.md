@@ -29,7 +29,7 @@ You need a modern NodeJS version (>= 20).
 - Create Mustache partials in the `views/partials` directory. (need a `.mustache` extension)
 - Create test data in JSON files: `test-data/<VIEW>/<TESTCASENAME>.json`, e.g. `test-data/my-view/logged-off.json`. There's one JSON file per test case.
 - Create static files (resources like CSS, images, etc.) in the `public` directory.
-- Create layouts in the `layouts` directory. Layouts can be used to add global CSS stylesheets, JavaScript libraries or surrounding HTML elements, e.g. to indicate that certain themes (contrast mode etc.) are active. Each view and partial can be previewed for each layout.
+- Create layouts in the `layouts` directory. Layouts can be used to add global CSS stylesheets, JavaScript libraries or surrounding HTML elements, e.g. to indicate that certain themes (contrast mode etc.) are active. Each view and partial can be previewed for each layout. Layouts are optional and you can choose no to use them, by not setting a layouts directory in the config.
 - Create a preview configuration `preview.config.mjs` (see below).
 - Run `npx mustache-preview` and open [`http://localhost:3000`](http://localhost:3000) in your browser.
 
@@ -63,7 +63,7 @@ export default {
     */
     public: "public",
     "test-data": "test-data",
-    layouts: "layouts",
+    layouts: "layouts", // optional
   },
   /* You can also add helper mock implementations that can be used in the templates */
   helpers: {

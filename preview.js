@@ -44,7 +44,7 @@ app.set("view engine", "mustache");
 const hdlbrs = create({
   extname: ".mustache",
   partialsDir: config.paths.partials,
-  layoutsDir: resolve("layouts"),
+  layoutsDir: config.paths.layouts ? resolve(config.paths.layouts) : undefined,
   helpers: config.helpers,
 });
 app.engine("mustache", hdlbrs.engine);
@@ -74,7 +74,7 @@ app.use("/", (req, res, next) => {
 
   res.render(req.query.view, {
     ...JSON.parse(readFileSync(testCaseFilename)),
-    layout: req.query.layout,
+    layout: config.paths.layouts ? req.query.layout : undefined,
   });
 });
 
@@ -103,7 +103,7 @@ app.use("/", async (req, res, next) => {
     "tmp",
     {
       ...JSON.parse(readFileSync(testCaseFilename)),
-      layout: req.query.layout,
+      layout: config.paths.layouts ? req.query.layout : undefined,
     },
     (err, html) => {
       unlinkSync(`${config.paths.views}/tmp.mustache`);
@@ -117,9 +117,12 @@ app.get("/", async (_req, res) => {
     .filter((f) => f.endsWith(".mustache"))
     .map((f) => f.substring(0, f.length - 9));
 
-  const layouts = readdirSync(resolve(config.paths.layouts))
-    .filter((f) => f.endsWith(".mustache"))
-    .map((f) => f.substring(0, f.length - 9));
+  let layouts = ["preview"];
+  if (config.paths.layouts) {
+    layouts = readdirSync(resolve(config.paths.layouts))
+      .filter((f) => f.endsWith(".mustache"))
+      .map((f) => f.substring(0, f.length - 9));
+  }
 
   const partialNames = Object.keys(await hdlbrs.getPartials());
   const partials = partialNames
@@ -167,15 +170,20 @@ app.get("/", async (_req, res) => {
   );
 });
 
-const getWatchDirs = () => [
-  resolve(config.paths.views),
-  resolve(config.paths.public),
-  resolve(config.paths["test-data"]),
-  resolve(config.paths.layouts),
-  ...(typeof config.paths.partials === "string"
-    ? [resolve(config.paths.partials)]
-    : config.paths.partials.map((p) => resolve(p.dir))),
-];
+const getWatchDirs = () => {
+  const dirs = [
+    resolve(config.paths.views),
+    resolve(config.paths.public),
+    resolve(config.paths["test-data"]),
+    ...(typeof config.paths.partials === "string"
+      ? [resolve(config.paths.partials)]
+      : config.paths.partials.map((p) => resolve(p.dir))),
+  ];
+  if (config.paths.layouts) {
+    dirs.push(resolve(config.paths.layouts));
+  }
+  return dirs;
+};
 
 app.ws("/", (ws) => {
   const watcher = chokidar.watch(getWatchDirs(), {
