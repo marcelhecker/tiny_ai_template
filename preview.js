@@ -20,6 +20,18 @@ import { program } from "commander";
 import ExpressWs from "express-ws";
 import chokidar from "chokidar";
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Convert import.meta.url to a file path
+const __filename = fileURLToPath(import.meta.url);
+
+// Get the directory name from the file path
+const __dirname = dirname(__filename);
+
+// Now you can use __dirname as expected
+const filePath = `${__dirname}/preview-index.mustache`;
+
 program.option("-c, --config <config>").option("-p, --port <port>");
 program.parse();
 const cliOptions = program.opts();
@@ -145,7 +157,7 @@ app.get("/", async (_req, res) => {
   res.status(200).send(
     handlebars.compile(
       readFileSync(
-        resolve(`${import.meta.dirname}/preview-index.mustache`)
+        resolve(filePath)
       ).toString()
     )({
       layouts,
