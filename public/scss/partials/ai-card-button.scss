@@ -1,0 +1,92 @@
+.ai-card-button {
+    display: flex;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    border: 1px solid #D33F01;
+    background: #FFF;
+    text-decoration: none;
+    transition: all ease-in-out 0.5s;
+
+    &:hover {
+        border-radius: 8px;
+        border: 1px solid #D33F01;
+        background: #E99F80;
+
+        transition: all ease-in-out 0.5s;
+    }
+
+    &.disabled {
+        border-radius: 8px;
+        border: 1px solid #A4A5AC;
+        background: #FFF;
+        pointer-events: none;
+        cursor: not-allowed;
+
+        .ai-card-button--purpose,
+        .ai-card-button--description {
+            color: #A4A5AC;
+        }
+        
+    }
+
+    .ai-card-button--text-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ai-card-button--purpose,
+    .ai-card-button--description {
+        color: #00091E;
+        text-align: center;
+        font-family: "Atkinson Hyperlegible";
+        font-size: 18px;
+        font-style: normal;
+        line-height: 26px; /* 144.444% */
+        text-decoration: none;
+    }
+    .ai-card-button--purpose {
+        font-weight: 700;
+    }
+    .ai-card-button--description {
+        font-weight: 400;
+    }
+
+    @include respond-to('mobile') {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.dark {
+    .ai-card-button {
+        border-radius: 8px;
+        border: 1px solid #D33F01;
+        background: #00091E;
+
+        &:hover {
+            border-radius: 8px;
+            border: 1px solid #D33F01;
+            background: #A93201;
+        }
+
+        &.disabled {
+            border-radius: 8px;
+            border: 1px solid #60616D;
+
+            .ai-card-button--purpose,
+            .ai-card-button--description {
+                color: #60616D;
+            }
+        }
+
+        .ai-card-button--purpose,
+        .ai-card-button--description {
+            color: #FFF;
+        }
+    }
+}

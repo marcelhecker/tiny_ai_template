@@ -1,0 +1,57 @@
+{
+    "ai_card_button_versions": [
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Zusammenfassen",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Übersetzen",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Ausführliche Beschreibung",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Audio erstellen",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Zusammenfassen",
+            "description": "des markierten Textes",
+            "disabled": true
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Übersetzen",
+            "description": "des markierten Textes",
+            "disabled": true
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Ausführliche Beschreibung",
+            "description": "des markierten Textes",
+            "disabled": true
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Audio erstellen",
+            "description": "des markierten Textes",
+            "disabled": true
+        }
+
+    ]
+}
