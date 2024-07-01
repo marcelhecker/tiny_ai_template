@@ -5,29 +5,29 @@
     align-items: center;
     gap: 12px;
     border-radius: 8px;
-    border: 1px solid #D33F01;
-    background: #FFF;
+    border: 1px solid $lernplattform-400;
+    background: $neutral-white;
     text-decoration: none;
-    transition: all ease-in-out 0.5s;
+    transition: background-color ease-in-out 0.5s;
 
     &:hover {
         border-radius: 8px;
-        border: 1px solid #D33F01;
-        background: #E99F80;
+        border: 1px solid $lernplattform-400;
+        background: $lernplattform-200;
 
-        transition: all ease-in-out 0.5s;
+        transition: background-color ease-in-out 0.5s;
     }
 
     &.disabled {
         border-radius: 8px;
-        border: 1px solid #A4A5AC;
-        background: #FFF;
+        border: 1px solid $neutral-grey-200;
+        background: $neutral-white;
         pointer-events: none;
         cursor: not-allowed;
 
         .ai-card-button--purpose,
         .ai-card-button--description {
-            color: #A4A5AC;
+            color: $neutral-grey-200;
         }
         
     }
@@ -39,7 +39,7 @@
 
     .ai-card-button--purpose,
     .ai-card-button--description {
-        color: #00091E;
+        color: $neutral-grey-500;
         text-align: center;
         font-family: "Atkinson Hyperlegible";
         font-size: 18px;
@@ -65,28 +65,28 @@
 .dark {
     .ai-card-button {
         border-radius: 8px;
-        border: 1px solid #D33F01;
-        background: #00091E;
+        border: 1px solid $lernplattform-400;
+        background: $neutral-grey-500;
 
         &:hover {
             border-radius: 8px;
-            border: 1px solid #D33F01;
-            background: #A93201;
+            border: 1px solid $lernplattform-400;
+            background: $lernplattform-500;
         }
 
         &.disabled {
             border-radius: 8px;
-            border: 1px solid #60616D;
+            border: 1px solid $neutral-grey-300;
 
             .ai-card-button--purpose,
             .ai-card-button--description {
-                color: #60616D;
+                color: $neutral-grey-300;
             }
         }
 
         .ai-card-button--purpose,
         .ai-card-button--description {
-            color: #FFF;
+            color: $neutral-white;
         }
     }
 }

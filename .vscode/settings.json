@@ -1,6 +1,7 @@
 {
     "liveSassCompile.settings.includeItems": [
         "/style.s[ac]ss",
+        "/local-style.s[ac]ss",
     ],
     "liveSassCompile.settings.generateMap": false,
     // "liveSassCompile.settings.partialsList": [
