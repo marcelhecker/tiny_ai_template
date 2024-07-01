@@ -1,3 +1,50 @@
+/* tiny ai icon font */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tiny AI Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/tiny_ai_icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+[class^=icon-tiny_ai_],
+[class*=" icon-tiny_ai_"] {
+  font-family: "Tiny AI Icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 24px;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tiny_ai_shorten:before {
+  content: "\e900";
+}
+
+.icon-tiny_ai_extend:before {
+  content: "\e901";
+}
+
+.icon-tiny_ai_audio:before {
+  content: "\e902";
+}
+
+.icon-tiny_ai_image:before {
+  content: "\e903";
+}
+
+.icon-tiny_ai_pen:before {
+  content: "\e904";
+}
+
+.icon-tiny_ai_sparkle:before {
+  content: "\e905";
+}
+
 .dark {
   background-color: #00091E;
   color: white;
@@ -96,6 +143,9 @@
 .tiny_ai-card-button .tiny_ai-card-button--description {
   font-weight: 400;
 }
+.tiny_ai-card-button [class^=icon-tiny_ai_] {
+  color: #00091E;
+}
 @media (max-width: 480px) {
   .tiny_ai-card-button {
     display: flex;
@@ -125,6 +175,9 @@
 }
 .dark .tiny_ai-card-button .tiny_ai-card-button--purpose,
 .dark .tiny_ai-card-button .tiny_ai-card-button--description {
+  color: #FFF;
+}
+.dark .tiny_ai-card-button [class^=icon-tiny_ai_] {
   color: #FFF;
 }
 
