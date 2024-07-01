@@ -47,7 +47,7 @@
   font-weight: 500;
   src: url("../fonts/lexend-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-.ai-card-button {
+.tiny_ai-card-button {
   display: flex;
   padding: 16px 20px;
   flex-direction: column;
@@ -59,29 +59,29 @@
   text-decoration: none;
   transition: background-color ease-in-out 0.5s;
 }
-.ai-card-button:hover {
+.tiny_ai-card-button:hover {
   border-radius: 8px;
   border: 1px solid #D33F01;
   background: #E99F80;
   transition: background-color ease-in-out 0.5s;
 }
-.ai-card-button.disabled {
+.tiny_ai-card-button.disabled {
   border-radius: 8px;
   border: 1px solid #A4A5AC;
   background: #FFF;
   pointer-events: none;
   cursor: not-allowed;
 }
-.ai-card-button.disabled .ai-card-button--purpose,
-.ai-card-button.disabled .ai-card-button--description {
+.tiny_ai-card-button.disabled .tiny_ai-card-button--purpose,
+.tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #A4A5AC;
 }
-.ai-card-button .ai-card-button--text-wrapper {
+.tiny_ai-card-button .tiny_ai-card-button--text-wrapper {
   display: flex;
   flex-direction: column;
 }
-.ai-card-button .ai-card-button--purpose,
-.ai-card-button .ai-card-button--description {
+.tiny_ai-card-button .tiny_ai-card-button--purpose,
+.tiny_ai-card-button .tiny_ai-card-button--description {
   color: #00091E;
   text-align: center;
   font-family: "Atkinson Hyperlegible";
@@ -90,14 +90,14 @@
   line-height: 26px; /* 144.444% */
   text-decoration: none;
 }
-.ai-card-button .ai-card-button--purpose {
+.tiny_ai-card-button .tiny_ai-card-button--purpose {
   font-weight: 700;
 }
-.ai-card-button .ai-card-button--description {
+.tiny_ai-card-button .tiny_ai-card-button--description {
   font-weight: 400;
 }
 @media (max-width: 480px) {
-  .ai-card-button {
+  .tiny_ai-card-button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -105,26 +105,26 @@
   }
 }
 
-.dark .ai-card-button {
+.dark .tiny_ai-card-button {
   border-radius: 8px;
   border: 1px solid #D33F01;
   background: #00091E;
 }
-.dark .ai-card-button:hover {
+.dark .tiny_ai-card-button:hover {
   border-radius: 8px;
   border: 1px solid #D33F01;
   background: #A93201;
 }
-.dark .ai-card-button.disabled {
+.dark .tiny_ai-card-button.disabled {
   border-radius: 8px;
   border: 1px solid #60616D;
 }
-.dark .ai-card-button.disabled .ai-card-button--purpose,
-.dark .ai-card-button.disabled .ai-card-button--description {
+.dark .tiny_ai-card-button.disabled .tiny_ai-card-button--purpose,
+.dark .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #60616D;
 }
-.dark .ai-card-button .ai-card-button--purpose,
-.dark .ai-card-button .ai-card-button--description {
+.dark .tiny_ai-card-button .tiny_ai-card-button--purpose,
+.dark .tiny_ai-card-button .tiny_ai-card-button--description {
   color: #FFF;
 }
 

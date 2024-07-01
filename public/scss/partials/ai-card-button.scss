@@ -1,4 +1,4 @@
-.ai-card-button {
+.tiny_ai-card-button {
     display: flex;
     padding: 16px 20px;
     flex-direction: column;
@@ -25,20 +25,20 @@
         pointer-events: none;
         cursor: not-allowed;
 
-        .ai-card-button--purpose,
-        .ai-card-button--description {
+        .tiny_ai-card-button--purpose,
+        .tiny_ai-card-button--description {
             color: $neutral-grey-200;
         }
         
     }
 
-    .ai-card-button--text-wrapper {
+    .tiny_ai-card-button--text-wrapper {
         display: flex;
         flex-direction: column;
     }
 
-    .ai-card-button--purpose,
-    .ai-card-button--description {
+    .tiny_ai-card-button--purpose,
+    .tiny_ai-card-button--description {
         color: $neutral-grey-500;
         text-align: center;
         font-family: "Atkinson Hyperlegible";
@@ -47,10 +47,10 @@
         line-height: 26px; /* 144.444% */
         text-decoration: none;
     }
-    .ai-card-button--purpose {
+    .tiny_ai-card-button--purpose {
         font-weight: 700;
     }
-    .ai-card-button--description {
+    .tiny_ai-card-button--description {
         font-weight: 400;
     }
 
@@ -63,7 +63,7 @@
 }
 
 .dark {
-    .ai-card-button {
+    .tiny_ai-card-button {
         border-radius: 8px;
         border: 1px solid $lernplattform-400;
         background: $neutral-grey-500;
@@ -78,14 +78,14 @@
             border-radius: 8px;
             border: 1px solid $neutral-grey-300;
 
-            .ai-card-button--purpose,
-            .ai-card-button--description {
+            .tiny_ai-card-button--purpose,
+            .tiny_ai-card-button--description {
                 color: $neutral-grey-300;
             }
         }
 
-        .ai-card-button--purpose,
-        .ai-card-button--description {
+        .tiny_ai-card-button--purpose,
+        .tiny_ai-card-button--description {
             color: $neutral-white;
         }
     }
