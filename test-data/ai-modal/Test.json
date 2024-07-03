@@ -1,6 +1,18 @@
 {
     "modal_headline": "Wobei soll Dir die KI helfen?",
-    "tiny_ai_modal_buttons": [
+    "input": [
+        {
+            "iconname": "sparkle",
+            "button": [
+                {
+                    "btn-iconname": "arrow-right",
+                    "icon-left": false,
+                    "icon-right": true
+                }
+            ]
+        }
+    ],
+    "modal_buttons": [
         {
             "link": "https://google.de",
             "iconname": "shorten",

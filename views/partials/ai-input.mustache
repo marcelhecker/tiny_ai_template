@@ -1,9 +1,13 @@
-<div class="tiny_ai-input-container">
+<div class="tiny_ai-input-container {{#hasError}}has-error{{/hasError}} {{#disabled}}disabled{{/disabled}}">
+
     <div class="tiny_ai-input-icon">
-        ✨ <!-- This represents the icon, you can replace it with an actual icon if needed -->
+        {{> ai-icon }}
     </div>
-    <input type="text" class="tiny_ai-input-field" placeholder="Lass die KI deinen markierten Text bearbeiten...">
-    <button class="tiny_ai-input-button">
-        ➔ <!-- This represents the arrow button, you can replace it with an actual icon if needed -->
-    </button>
+    <input type="text" {{#disabled}}disabled{{/disabled}} class="tiny_ai-input-field" placeholder="Lass die KI deinen markierten Text bearbeiten...">
+    {{#button}}
+        {{> ai-button}}
+    {{/button}}
 </div>
+{{#hasError}}
+    <span class="tiny_ai-input-error">{{errorMessage}}<span>
+{{/hasError}}

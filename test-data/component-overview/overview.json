@@ -1,5 +1,5 @@
 {
-    "ai_card_button_versions": [
+    "modal_buttons": [
         {
             "link": "https://google.de",
             "iconname": "shorten",

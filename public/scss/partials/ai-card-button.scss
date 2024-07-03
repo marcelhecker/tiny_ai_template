@@ -29,7 +29,10 @@
         .tiny_ai-card-button--description {
             color: $neutral-grey-200;
         }
-        
+
+        [class^="icon-tiny_ai_"] {
+            color: $neutral-grey-200;
+        }
     }
 
     .tiny_ai-card-button--text-wrapper {
@@ -84,6 +87,10 @@
 
             .tiny_ai-card-button--purpose,
             .tiny_ai-card-button--description {
+                color: $neutral-grey-300;
+            }
+
+            [class^="icon-tiny_ai_"] {
                 color: $neutral-grey-300;
             }
         }

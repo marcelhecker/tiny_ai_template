@@ -1,11 +1,13 @@
 {
     "iconname": "sparkle",
+    "disabled": true,
     "errorMessage": "Du musst hier eine Anfrage für die KI eingeben.",
     "button": [
         {
             "btn-iconname": "arrow-right",
             "icon-left": false,
-            "icon-right": true
+            "icon-right": true,
+            "disabled": true
         }
     ]
 }

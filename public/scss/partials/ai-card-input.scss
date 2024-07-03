@@ -5,12 +5,37 @@
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &.has-error {
+        border-color: $feedback-error-200;
+        
+        ~.tiny_ai-input-error {
+            color: $feedback-error-200;
+            font-family: "Atkinson Hyperlegible";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+    }
+
+    &.disabled {
+        border-color: $neutral-grey-200;
+        .tiny_ai-input-icon {
+            color: $neutral-grey-200;
+        }
+        .tiny_ai-input-field {
+            background: none;
+            &::placeholder {
+                color: $neutral-grey-200;
+            }
+        }
+    }
 
     .tiny_ai-input-icon {
         margin-right: 10px;
         font-size: 18px;
-        color: #4a4a4a;
+        color: $neutral-grey-500;
     }
 
     .tiny_ai-input-field {
@@ -18,27 +43,50 @@
         border: none;
         outline: none;
         font-size: 16px;
-        color: #4a4a4a;
+        color: $neutral-grey-500;
 
         &::placeholder {
-            color: #a0a0a0;
+            color: $neutral-grey-300;
         }
     }
+    
+}
 
-    .tiny_ai-input-button {
-        background-color: #d9534f;
-        border: none;
-        border-radius: 4px;
-        color: #fff;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.dark {
+    .tiny_ai-input-container {
+        border: 1px solid $neutral-grey-200;
+        background: $neutral-grey-500;
 
-        &:hover {
-            background-color: #c9302c;
+        &.has-error {
+            border-color: $feedback-error-200;
+        }
+    
+
+        .tiny_ai-input-field {
+            background: $neutral-grey-500;
+            color: $neutral-white;
+
+            &::placeholder {
+                color: $neutral-grey-200;
+            }
+        }
+
+        .tiny_ai-input-icon {
+            color: $neutral-white;
+        }
+
+        &.disabled {
+            border-color: $neutral-grey-300;
+            .tiny_ai-input-icon {
+                color: $neutral-grey-300;
+            }
+            .tiny_ai-input-field {
+                background: none;
+            
+                &::placeholder {
+                    color: $neutral-grey-300;
+                }
+            }
         }
     }
 }

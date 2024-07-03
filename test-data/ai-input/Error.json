@@ -1,5 +1,6 @@
 {
     "iconname": "sparkle",
+    "hasError": true,
     "errorMessage": "Du musst hier eine Anfrage für die KI eingeben.",
     "button": [
         {

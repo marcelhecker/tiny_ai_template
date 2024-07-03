@@ -4,7 +4,7 @@
   font-family: "Tiny AI Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/tiny_ai_icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url([[font:tiny_ai|tiny_ai_icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 [class^=icon-tiny_ai_],
 [class*=" icon-tiny_ai_"] {
@@ -94,6 +94,34 @@
   font-weight: 500;
   src: url("../fonts/lexend-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Tiny AI Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/tiny_ai_icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fa-light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/fa-light-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.fa-light {
+  font-family: "Fa-light" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 24px;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .tiny_ai-card-button {
   display: flex;
   padding: 16px 20px;
@@ -121,6 +149,9 @@
 }
 .tiny_ai-card-button.disabled .tiny_ai-card-button--purpose,
 .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
+  color: #A4A5AC;
+}
+.tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
   color: #A4A5AC;
 }
 .tiny_ai-card-button .tiny_ai-card-button--text-wrapper {
@@ -173,6 +204,9 @@
 .dark .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #60616D;
 }
+.dark .tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
+  color: #60616D;
+}
 .dark .tiny_ai-card-button .tiny_ai-card-button--purpose,
 .dark .tiny_ai-card-button .tiny_ai-card-button--description {
   color: #FFF;
@@ -188,44 +222,80 @@
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tiny_ai-input-container.has-error {
+  border-color: #F00;
+}
+.tiny_ai-input-container.has-error ~ .tiny_ai-input-error {
+  color: #F00;
+  font-family: "Atkinson Hyperlegible";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.tiny_ai-input-container.disabled {
+  border-color: #A4A5AC;
+}
+.tiny_ai-input-container.disabled .tiny_ai-input-icon {
+  color: #A4A5AC;
+}
+.tiny_ai-input-container.disabled .tiny_ai-input-field {
+  background: none;
+}
+.tiny_ai-input-container.disabled .tiny_ai-input-field::placeholder {
+  color: #A4A5AC;
 }
 .tiny_ai-input-container .tiny_ai-input-icon {
   margin-right: 10px;
   font-size: 18px;
-  color: #4a4a4a;
+  color: #00091E;
 }
 .tiny_ai-input-container .tiny_ai-input-field {
   flex-grow: 1;
   border: none;
   outline: none;
   font-size: 16px;
-  color: #4a4a4a;
+  color: #00091E;
 }
 .tiny_ai-input-container .tiny_ai-input-field::placeholder {
-  color: #a0a0a0;
+  color: #60616D;
 }
-.tiny_ai-input-container .tiny_ai-input-button {
-  background-color: #d9534f;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.dark .tiny_ai-input-container {
+  border: 1px solid #A4A5AC;
+  background: #00091E;
 }
-.tiny_ai-input-container .tiny_ai-input-button:hover {
-  background-color: #c9302c;
+.dark .tiny_ai-input-container.has-error {
+  border-color: #F00;
+}
+.dark .tiny_ai-input-container .tiny_ai-input-field {
+  background: #00091E;
+  color: #FFF;
+}
+.dark .tiny_ai-input-container .tiny_ai-input-field::placeholder {
+  color: #A4A5AC;
+}
+.dark .tiny_ai-input-container .tiny_ai-input-icon {
+  color: #FFF;
+}
+.dark .tiny_ai-input-container.disabled {
+  border-color: #60616D;
+}
+.dark .tiny_ai-input-container.disabled .tiny_ai-input-icon {
+  color: #60616D;
+}
+.dark .tiny_ai-input-container.disabled .tiny_ai-input-field {
+  background: none;
+}
+.dark .tiny_ai-input-container.disabled .tiny_ai-input-field::placeholder {
+  color: #60616D;
 }
 
 .tiny_ai-modal {
-  background: #fff;
+  background: #FFF;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 400px;
   padding: 20px;
   position: relative;
 }
@@ -262,19 +332,13 @@
   flex-direction: column;
   gap: 10px;
 }
-.tiny_ai-modal--body .action-btn {
-  background-color: #fff;
-  border: 1px solid #dc3545;
-  border-radius: 4px;
-  padding: 10px;
-  cursor: pointer;
-  text-align: left;
-  font-size: 16px;
-  color: #dc3545;
-  transition: background-color 0.3s;
-}
-.tiny_ai-modal--body .action-btn:hover {
-  background-color: #f8d7da;
+.tiny_ai-modal--body .tiny_ai-modal--button-wrapper {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  flex-wrap: wrap;
 }
 .tiny_ai-modal--bottom {
   margin-top: 20px;
@@ -283,4 +347,48 @@
 .tiny_ai-modal--bottom .usage-info {
   font-size: 12px;
   color: #6c757d;
+}
+
+.tiny_ai-button {
+  display: flex;
+  padding: 11px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #D33F01;
+}
+.tiny_ai-button .fa-light {
+  font-size: 20px;
+}
+.tiny_ai-button:hover {
+  background-color: #c9302c;
+}
+.tiny_ai-button.left .tiny_ai-icon-left {
+  margin-right: 8px;
+}
+.tiny_ai-button.right .tiny_ai-icon-right {
+  margin-left: 8px;
+}
+.tiny_ai-button .tiny_ai-button-text {
+  flex-grow: 1;
+  text-align: center;
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+.tiny_ai-button.has-icon .tiny_ai-button-text {
+  flex-grow: 0;
+}
+.tiny_ai-button.disabled {
+  background: #A4A5AC;
+  cursor: no-drop;
+}
+.tiny_ai-button.disabled .tiny_ai-button-text {
+  color: #FFF;
 }

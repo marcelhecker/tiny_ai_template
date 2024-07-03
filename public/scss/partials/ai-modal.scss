@@ -1,54 +1,7 @@
-// .ai-modal {
-//     display: inline-flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     width: 100%;
-
-//     border-radius: 8px;
-//     border: 1px solid var(--neutral-grey-100, #E8E8EA);
-//     background: $neutral-white;
-
-//     .ai-modal--header {
-//         display: flex;
-//         padding: 24px 24px 16px 24px;
-//         flex-direction: row;
-//         justify-content: center;
-//         align-items: flex-start;
-//         gap: 24px;
-
-//         h5 {
-//             color: $neutral-grey-500;
-//             /* h5/medium */
-//             font-family: Lexend;
-//             font-size: 20px;
-//             font-style: normal;
-//             font-weight: 500;
-//             line-height: 30px; /* 150% */
-//         }
-//     }
-
-//     .ai-modal--body {
-//         display: flex;
-//         padding: 8px 24px 0px 24px;
-//         flex-direction: column;
-//         align-items: flex-start;
-//         gap: 24px;
-//     }
-
-//     .ai-modal--bottom {
-//         display: flex;
-//         padding: 16px 24px;
-//         justify-content: flex-end;
-//         align-items: flex-end;
-//         gap: 10px;
-//     }
-// }
-
 .tiny_ai-modal {
-    background: #fff;
+    background: $neutral-white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
     padding: 20px;
     position: relative;
 
@@ -89,20 +42,13 @@
         flex-direction: column;
         gap: 10px;
 
-        .action-btn {
-            background-color: #fff;
-            border: 1px solid #dc3545;
-            border-radius: 4px;
-            padding: 10px;
-            cursor: pointer;
-            text-align: left;
-            font-size: 16px;
-            color: #dc3545;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: #f8d7da;
-            }
+        .tiny_ai-modal--button-wrapper {
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 16px;
+            align-self: stretch;
+            flex-wrap: wrap;
         }
     }
 

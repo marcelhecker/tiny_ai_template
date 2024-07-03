@@ -1,0 +1,56 @@
+.tiny_ai-button {
+    display: flex;
+    padding: 11px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    color: $neutral-white;
+    cursor: pointer;
+    border-radius: 8px;
+    background: $lernplattform-400;
+
+    .fa-light {
+        font-size: 20px;
+    }
+
+    &:hover {
+        background-color: #c9302c;
+    }
+
+    &.left {
+        .tiny_ai-icon-left {
+            margin-right: 8px;
+        }
+    }
+
+    &.right {
+        .tiny_ai-icon-right {
+            margin-left: 8px;
+        }
+    }
+
+    .tiny_ai-button-text {
+        flex-grow: 1;
+        text-align: center;
+        font-family: "Atkinson Hyperlegible";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+    &.has-icon {
+        .tiny_ai-button-text {
+            flex-grow: 0;
+        }
+    }
+
+    &.disabled {
+        background: $neutral-grey-200;
+        cursor: no-drop;
+        .tiny_ai-button-text {
+            color: $neutral-white;
+        }
+    }
+}

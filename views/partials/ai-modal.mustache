@@ -9,11 +9,14 @@
             <div class="tiny_ai-modal--subtext">
                 <p>Die eingegebenen Daten werden an ein externes KI-Tool gesendet.</p>
             </div>
-            {{> ai-input}}
-            {{#tiny_ai_modal_buttons}} 
-                {{> ai-card-button}}
-                <br>
-            {{/tiny_ai_modal_buttons}}
+            {{#input}}
+                {{> ai-input}}
+            {{/input}}
+            <div class="tiny_ai-modal--button-wrapper">
+                {{#modal_buttons}} 
+                    {{> ai-card-button}}
+                {{/modal_buttons}}
+            </div>
         </div>
         <div class="tiny_ai-modal--bottom">
             <p class="usage-info">23/40 Text-, 1/40 Audio-, 10/20 Bild-Anfragen pro Tag</p>

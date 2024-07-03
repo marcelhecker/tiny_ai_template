@@ -4,7 +4,7 @@
   font-family: "Tiny AI Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/tiny_ai_icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url([[font:tiny_ai|tiny_ai_icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 [class^=icon-tiny_ai_],
 [class*=" icon-tiny_ai_"] {
@@ -74,6 +74,9 @@
 .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #A4A5AC;
 }
+.tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
+  color: #A4A5AC;
+}
 .tiny_ai-card-button .tiny_ai-card-button--text-wrapper {
   display: flex;
   flex-direction: column;
@@ -124,6 +127,9 @@
 .dark .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #60616D;
 }
+.dark .tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
+  color: #60616D;
+}
 .dark .tiny_ai-card-button .tiny_ai-card-button--purpose,
 .dark .tiny_ai-card-button .tiny_ai-card-button--description {
   color: #FFF;
@@ -139,7 +145,6 @@
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .tiny_ai-input-container .tiny_ai-input-icon {
   margin-right: 10px;
@@ -156,27 +161,11 @@
 .tiny_ai-input-container .tiny_ai-input-field::placeholder {
   color: #a0a0a0;
 }
-.tiny_ai-input-container .tiny_ai-input-button {
-  background-color: #d9534f;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tiny_ai-input-container .tiny_ai-input-button:hover {
-  background-color: #c9302c;
-}
 
 .tiny_ai-modal {
-  background: #fff;
+  background: #FFF;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 400px;
   padding: 20px;
   position: relative;
 }
@@ -234,4 +223,36 @@
 .tiny_ai-modal--bottom .usage-info {
   font-size: 12px;
   color: #6c757d;
+}
+
+.tiny_ai-button {
+  display: flex;
+  padding: 11px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #D33F01;
+}
+.tiny_ai-button .fa-light {
+  font-size: 20px;
+}
+.tiny_ai-button:hover {
+  background-color: #c9302c;
+}
+.tiny_ai-button.left .tiny_ai-icon-left {
+  margin-right: 8px;
+}
+.tiny_ai-button.right .tiny_ai-icon-right {
+  margin-left: 8px;
+}
+.tiny_ai-button .tiny_ai-button-text {
+  flex-grow: 1;
+  text-align: center;
+}
+.tiny_ai-button.has-icon .tiny_ai-button-text {
+  flex-grow: 0;
 }
