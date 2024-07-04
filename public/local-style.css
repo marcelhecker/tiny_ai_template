@@ -322,11 +322,6 @@
   cursor: pointer;
   line-height: 1;
 }
-.tiny_ai-modal--subtext {
-  font-size: 14px;
-  color: #6c757d;
-  margin: 0 0 20px 0;
-}
 .tiny_ai-modal--body {
   display: flex;
   flex-direction: column;
@@ -391,4 +386,14 @@
 }
 .tiny_ai-button.disabled .tiny_ai-button-text {
   color: #FFF;
+}
+
+.tiny_ai-info-text {
+  display: flex;
+  color: #60616D;
+  font-family: "Atkinson Hyperlegible";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
