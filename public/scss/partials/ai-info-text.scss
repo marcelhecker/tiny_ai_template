@@ -1,9 +1,15 @@
 .tiny_ai-info-text {
         display: flex;
+        align-items: center;
+        gap: 10px;
         color: $neutral-grey-300;
         font-family: "Atkinson Hyperlegible";
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 20px;
+
+        p {
+            margin: 0;
+        }
     }
