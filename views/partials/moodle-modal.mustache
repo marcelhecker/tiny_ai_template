@@ -1,0 +1,54 @@
+<div class="modal moodle-has-zindex" data-region="modal-container" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog" data-region="modal" tabindex="0">
+        <div class="modal-content">
+            <div class="modal-header" data-region="header">
+
+                {{> moodle-modal-header}}
+
+                <button type="button" class="close" data-action="hide">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" data-region="body">
+                {{#show_start}}
+                    {{> moodle-modal-body-start}}
+                {{/show_start}}
+                {{#show_translate}}
+                    {{> moodle-modal-body-translate}}
+                {{/show_translate}}
+                {{#show_textarea}}
+                    {{> moodle-modal-body-textarea}}
+                {{/show_textarea}}
+                {{#show_summarize}}
+                    {{> moodle-modal-body-summarize}}
+                {{/show_summarize}}
+                {{#show_suggestion}}
+                    {{> moodle-modal-body-suggestion}}
+                {{/show_suggestion}}
+                {{#show_loading}}
+                    {{> moodle-modal-body-loading}}
+                {{/show_loading}}
+                {{#show_dismiss}}
+                    {{> moodle-modal-body-dismiss}}
+                {{/show_dismiss}}
+                {{#show_audio}}
+                    {{> moodle-modal-body-audio}}
+                {{/show_audio}}
+                {{#show_audio_suggestion}}
+                    {{> moodle-modal-body-audio-suggestion}}
+                {{/show_audio_suggestion}}
+            </div>
+            <div class="modal-footer" data-region="footer">
+                {{#show_footer_info}}
+                    {{> moodle-modal-footer-info}}
+                {{/show_footer_info}}
+                {{#show_footer_generate}}
+                    {{> moodle-modal-footer-generate}}
+                {{/show_footer_generate}}
+                {{#show_footer_replace}}
+                    {{> moodle-modal-footer-replace}}
+                {{/show_footer_replace}}
+            </div>
+        </div>
+    </div>
+</div>

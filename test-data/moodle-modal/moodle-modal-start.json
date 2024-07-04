@@ -1,0 +1,55 @@
+{
+    "modal_headline": "Wobei soll Dir die KI helfen?",
+    "show_audio_suggestion": false,
+    "show_audio": false,
+    "show_dismiss": false,
+    "show_loading": false,
+    "show_start": true,
+    "show_suggestion": false,
+    "show_summarize": false,
+    "show_textarea": false,
+    "show_translate": false,
+    "show_footer_generate": false,
+    "show_footer_info": true,
+    "show_footer_replace": false,
+
+
+    "input": [
+        {
+            "iconname": "sparkle",
+            "button": [
+                {
+                    "btn-iconname": "arrow-right",
+                    "icon-left": false,
+                    "icon-right": true
+                }
+            ]
+        }
+    ],
+    "modal_buttons": [
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Zusammenfassen",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Übersetzen",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Ausführliche Beschreibung",
+            "description": "des markierten Textes"
+        },
+        {
+            "link": "https://google.de",
+            "iconname": "shorten",
+            "purpose": "Audio erstellen",
+            "description": "des markierten Textes"
+        }
+    ]
+}
