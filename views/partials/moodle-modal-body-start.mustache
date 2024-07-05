@@ -2,8 +2,10 @@
 {{#input}}
     {{> ai-input}}
 {{/input}}
-<div class="tiny_ai-modal--button-wrapper">
-    {{#modal_buttons}} 
+<div class="tiny_ai-modal--button-wrapper row">
+    {{#modal_buttons}}
+        <div class="col-12 col-md-6 mb-3">
         {{> ai-card-button}}
+        </div>
     {{/modal_buttons}}
 </div>
