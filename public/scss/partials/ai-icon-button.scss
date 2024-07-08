@@ -1,0 +1,25 @@
+.tiny_ai-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    .tiny_ai-icon {
+        font-size: 24px;
+        color: #000;
+    }
+
+    &:hover {
+        background-color: #dcdcdc;
+    }
+
+    &:active {
+        background-color: #c5c5c5;
+    }
+}

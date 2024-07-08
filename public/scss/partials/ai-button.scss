@@ -10,6 +10,27 @@
     border-radius: 8px;
     background: $lernplattform-400;
 
+    &.secondary {
+        background-color: $neutral-white;
+        border: 1px solid $lernplattform-400;
+        color: $neutral-grey-500;
+
+        &:hover {
+            color: $neutral-white;
+        }
+    }
+
+    &.tertiary {
+        background-color: unset;
+        border: none;
+        color: $neutral-grey-500;
+
+        &:hover {
+            background-color: unset;
+            color: $lernplattform-400;
+        }
+    }
+
     .fa-light {
         font-size: 20px;
     }
@@ -53,4 +74,29 @@
             color: $neutral-white;
         }
     }
+}
+
+.dark {
+    .tiny_ai-button {
+        &.secondary {
+            background-color: $neutral-grey-500;
+            color: $neutral-white;
+
+            &:hover {
+                background-color: #c9302c;
+            }
+        }
+
+        &.tertiary {
+            background-color: unset;
+            border: none;
+            color: $neutral-white;
+
+            &:hover {
+                background-color: unset;
+                color: $lernplattform-400;
+            }
+        }
+    }
+
 }

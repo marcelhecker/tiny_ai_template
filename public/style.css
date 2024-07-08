@@ -326,6 +326,23 @@
   border-radius: 8px;
   background: #D33F01;
 }
+.tiny_ai-button.secondary {
+  background-color: #FFF;
+  border: 1px solid #D33F01;
+  color: #00091E;
+}
+.tiny_ai-button.secondary:hover {
+  color: #FFF;
+}
+.tiny_ai-button.tertiary {
+  background-color: unset;
+  border: none;
+  color: #00091E;
+}
+.tiny_ai-button.tertiary:hover {
+  background-color: unset;
+  color: #D33F01;
+}
 .tiny_ai-button .fa-light {
   font-size: 20px;
 }
@@ -356,6 +373,23 @@
 }
 .tiny_ai-button.disabled .tiny_ai-button-text {
   color: #FFF;
+}
+
+.dark .tiny_ai-button.secondary {
+  background-color: #00091E;
+  color: #FFF;
+}
+.dark .tiny_ai-button.secondary:hover {
+  background-color: #c9302c;
+}
+.dark .tiny_ai-button.tertiary {
+  background-color: unset;
+  border: none;
+  color: #FFF;
+}
+.dark .tiny_ai-button.tertiary:hover {
+  background-color: unset;
+  color: #D33F01;
 }
 
 .tiny_ai-info-text {
@@ -502,4 +536,27 @@
 }
 .tiny_ai-alert .tiny_ai-alert-text {
   color: #00091E;
+}
+
+.tiny_ai-icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.tiny_ai-icon-button .tiny_ai-icon {
+  font-size: 24px;
+  color: #000;
+}
+.tiny_ai-icon-button:hover {
+  background-color: #dcdcdc;
+}
+.tiny_ai-icon-button:active {
+  background-color: #c5c5c5;
 }

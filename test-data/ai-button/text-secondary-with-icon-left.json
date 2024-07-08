@@ -2,6 +2,7 @@
     "hasText": true,
     "button-text": "Button",
     "btn-iconname": "arrow-right",
-    "icon-left": true,
-    "icon-right": false
+    "icon-left": false,
+    "icon-right": true,
+    "secondary": true
 }
