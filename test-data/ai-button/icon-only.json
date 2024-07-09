@@ -1,6 +1,7 @@
 {
     "button-text": "Button",
-    "btn-iconname": "arrow-right",
     "icon-left": false,
-    "icon-right": true
+    "icon-right": true,
+    "iconname": "arrow-right",
+    "iconstyle": "solid"
 }

@@ -4,7 +4,8 @@
     "errorMessage": "Du musst hier eine Anfrage für die KI eingeben.",
     "button": [
         {
-            "btn-iconname": "arrow-right",
+            "iconname": "arrow-right",
+            "iconstyle": "solid",
             "icon-left": false,
             "icon-right": true,
             "disabled": true

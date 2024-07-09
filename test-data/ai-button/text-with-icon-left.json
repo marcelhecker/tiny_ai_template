@@ -1,7 +1,8 @@
 {
     "hasText": true,
     "button-text": "Button",
-    "btn-iconname": "arrow-right",
     "icon-left": true,
-    "icon-right": false
+    "icon-right": false,
+    "iconname": "arrow-right",
+    "iconstyle": "solid"
 }

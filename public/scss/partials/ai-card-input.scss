@@ -5,11 +5,12 @@
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
+    position: relative;
 
     &.has-error {
         border-color: $feedback-error-200;
-        
-        ~.tiny_ai-input-error {
+
+        ~ .tiny_ai-input-error {
             color: $feedback-error-200;
             font-family: "Atkinson Hyperlegible";
             font-size: 14px;
@@ -21,11 +22,14 @@
 
     &.disabled {
         border-color: $neutral-grey-200;
+
         .tiny_ai-input-icon {
             color: $neutral-grey-200;
         }
+
         .tiny_ai-input-field {
             background: none;
+
             &::placeholder {
                 color: $neutral-grey-200;
             }
@@ -44,12 +48,19 @@
         outline: none;
         font-size: 16px;
         color: $neutral-grey-500;
+        resize: none; /* Prevent manual resizing */
+        overflow-y: auto; /* Enable vertical scroll */
+        height: 40px;
+        min-height: 32px;
+        max-height: 342px;
+        line-height: 1.5;
+        padding: 8px;
+        box-sizing: border-box;
 
         &::placeholder {
             color: $neutral-grey-300;
         }
     }
-    
 }
 
 .dark {
@@ -60,7 +71,6 @@
         &.has-error {
             border-color: $feedback-error-200;
         }
-    
 
         .tiny_ai-input-field {
             background: $neutral-grey-500;
@@ -77,12 +87,14 @@
 
         &.disabled {
             border-color: $neutral-grey-300;
+
             .tiny_ai-input-icon {
                 color: $neutral-grey-300;
             }
+
             .tiny_ai-input-field {
                 background: none;
-            
+
                 &::placeholder {
                     color: $neutral-grey-300;
                 }

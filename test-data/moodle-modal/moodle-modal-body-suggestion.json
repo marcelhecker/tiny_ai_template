@@ -1,0 +1,59 @@
+{
+    "modal_headline": "KI Vorschlag",
+    "show_audio_suggestion": false,
+    "show_audio": false,
+    "show_dismiss": false,
+    "show_loading": false,
+    "show_start": false,
+    "show_suggestion": true,
+    "show_summarize": false,
+    "show_textarea": false,
+    "show_translate": false,
+    "show_footer_generate": false,
+    "show_footer_info": false,
+    "show_footer_replace": true,
+    "showIcon": true,
+    "input": [
+        {
+            "iconname": "sparkle",
+            "button": [
+                {
+                    "btn-iconname": "arrow-right",
+                    "icon-left": false,
+                    "icon-right": true
+                }
+            ]
+        }
+    ],
+    "footer_iconbuttons": [
+        {
+            "iconName": "trash"
+        },
+        {
+            "iconName": "arrows-rotate"
+        }
+    ],
+    "footer_buttons": [
+        {
+            "hasText": true,
+            "button-text": "Unten einfügen",
+            "icon-left": true,
+            "icon-right": false,
+            "secondary": true,
+            "iconname": "text-insert-last",
+            "customicon": true
+        },
+        {
+            "hasText": true,
+            "button-text": "Auswahl ersetzen",
+            "icon-left": true,
+            "icon-right": false,
+            "primary": true,
+            "iconname": "check",
+            "iconstyle": "solid"
+        }
+    ],
+    "infoText": "Die KI kann Fehler machen.",
+    "resultText": "Hier steht ein Satz in einfacher und lustiger Sprache: Markierte Text."
+}
+

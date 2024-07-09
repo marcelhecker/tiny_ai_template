@@ -1,13 +1,12 @@
 <div class="tiny_ai-input-container {{#hasError}}has-error{{/hasError}} {{#disabled}}disabled{{/disabled}}">
-
     <div class="tiny_ai-input-icon">
         {{> ai-icon }}
     </div>
-    <input type="text" {{#disabled}}disabled{{/disabled}} class="tiny_ai-input-field" placeholder="Lass die KI deinen markierten Text bearbeiten...">
+    <textarea {{#disabled}}disabled{{/disabled}} class="tiny_ai-input-field" placeholder="Lass die KI deinen markierten Text bearbeiten..." oninput="adjustTextareaHeight(this)"></textarea>
     {{#button}}
         {{> ai-button}}
     {{/button}}
 </div>
 {{#hasError}}
-    <span class="tiny_ai-input-error">{{errorMessage}}<span>
+    <span class="tiny_ai-input-error">{{errorMessage}}</span>
 {{/hasError}}

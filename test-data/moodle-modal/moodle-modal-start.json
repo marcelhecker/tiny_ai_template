@@ -18,9 +18,11 @@
     "input": [
         {
             "iconname": "sparkle",
+            "customicon": true,
             "button": [
                 {
-                    "btn-iconname": "arrow-right",
+                    "iconname": "arrow-right",
+                    "iconstyle": "solid",
                     "icon-left": false,
                     "icon-right": true
                 }
@@ -30,27 +32,32 @@
     "modal_buttons": [
         {
             "link": "https://google.de",
+            "customicon": true,
             "iconname": "shorten",
             "purpose": "Zusammenfassen",
             "description": "des markierten Textes"
         },
         {
             "link": "https://google.de",
-            "iconname": "shorten",
+            "iconname": "language",
+            "iconstyle": "solid",
             "purpose": "Übersetzen",
             "description": "des markierten Textes"
         },
         {
             "link": "https://google.de",
-            "iconname": "shorten",
+            "customicon": true,
+            "iconname": "extend",
             "purpose": "Ausführliche Beschreibung",
             "description": "des markierten Textes"
         },
         {
             "link": "https://google.de",
-            "iconname": "shorten",
+            "iconname": "microphone",
+            "iconstyle": "solid",
             "purpose": "Audio erstellen",
             "description": "des markierten Textes"
         }
-    ]
+    ],
+    "infoText": "Die eingegebenen Daten werden an ein externes KI-Tool gesendet."
 }

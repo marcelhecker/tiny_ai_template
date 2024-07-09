@@ -4,7 +4,7 @@
   font-family: "Tiny AI Icons";
   font-style: normal;
   font-weight: 400;
-  src: url([[font:tiny_ai|tiny_ai_icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url([[font:tiny_ai|tiny-ai-icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 [class^=icon-tiny_ai_],
 [class*=" icon-tiny_ai_"] {
@@ -29,16 +29,8 @@
   content: "\e901";
 }
 
-.icon-tiny_ai_audio:before {
+.icon-tiny_ai_text-insert-last:before {
   content: "\e902";
-}
-
-.icon-tiny_ai_image:before {
-  content: "\e903";
-}
-
-.icon-tiny_ai_pen:before {
-  content: "\e904";
 }
 
 .icon-tiny_ai_sparkle:before {
@@ -99,32 +91,23 @@
   font-family: "Tiny AI Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/tiny_ai_icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/tiny-ai-icons.woff") format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Fa-light";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/fa-light-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-.fa-light {
-  font-family: "Fa-light" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  font-size: 24px;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .modal {
   position: relative;
   display: block;
+}
+
+.tiny_ai-footer-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tiny_ai-footer-wrapper .tiny_ai-footer-left,
+.tiny_ai-footer-wrapper .tiny_ai-footer-right {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
 }
 
 .tiny_ai-card-button {
@@ -156,7 +139,8 @@
 .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #A4A5AC;
 }
-.tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
+.tiny_ai-card-button.disabled [class^=icon-tiny_ai_],
+.tiny_ai-card-button.disabled [class^=fa-] {
   color: #A4A5AC;
 }
 .tiny_ai-card-button .tiny_ai-card-button--text-wrapper {
@@ -179,7 +163,9 @@
 .tiny_ai-card-button .tiny_ai-card-button--description {
   font-weight: 400;
 }
-.tiny_ai-card-button [class^=icon-tiny_ai_] {
+.tiny_ai-card-button [class^=icon-tiny_ai_],
+.tiny_ai-card-button [class^=fa-] {
+  font-size: 24px;
   color: #00091E;
 }
 @media (max-width: 480px) {
@@ -209,14 +195,16 @@
 .dark .tiny_ai-card-button.disabled .tiny_ai-card-button--description {
   color: #60616D;
 }
-.dark .tiny_ai-card-button.disabled [class^=icon-tiny_ai_] {
+.dark .tiny_ai-card-button.disabled [class^=icon-tiny_ai_],
+.dark .tiny_ai-card-button.disabled [class^=fa-] {
   color: #60616D;
 }
 .dark .tiny_ai-card-button .tiny_ai-card-button--purpose,
 .dark .tiny_ai-card-button .tiny_ai-card-button--description {
   color: #FFF;
 }
-.dark .tiny_ai-card-button [class^=icon-tiny_ai_] {
+.dark .tiny_ai-card-button [class^=icon-tiny_ai_],
+.dark .tiny_ai-card-button [class^=fa-] {
   color: #FFF;
 }
 
@@ -227,6 +215,7 @@
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
+  position: relative;
 }
 .tiny_ai-input-container.has-error {
   border-color: #F00;
@@ -262,6 +251,14 @@
   outline: none;
   font-size: 16px;
   color: #00091E;
+  resize: none; /* Prevent manual resizing */
+  overflow-y: auto; /* Enable vertical scroll */
+  height: 40px;
+  min-height: 32px;
+  max-height: 342px;
+  line-height: 1.5;
+  padding: 8px;
+  box-sizing: border-box;
 }
 .tiny_ai-input-container .tiny_ai-input-field::placeholder {
   color: #60616D;
@@ -425,7 +422,7 @@
   background-color: unset;
   color: #D33F01;
 }
-.tiny_ai-button .fa-light {
+.tiny_ai-button [class^=fa-] {
   font-size: 20px;
 }
 .tiny_ai-button:hover {
@@ -584,7 +581,7 @@
 }
 .dark .tiny_ai-dropdown .tiny_ai-icon {
   font-size: 16px;
-  color: #00091E;
+  color: #FFF;
 }
 .dark .tiny_ai-dropdown .tiny_ai-dropdown-menu {
   background-color: #00091E;
@@ -624,21 +621,115 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background-color: #e5e5e5;
+  background-color: #E8E8EA;
   border: none;
   cursor: pointer;
   outline: none;
 }
 .tiny_ai-icon-button .tiny_ai-icon {
-  font-size: 24px;
-  color: #000;
+  font-size: 20px;
+  color: #00091E;
 }
 .tiny_ai-icon-button:hover {
   background-color: #dcdcdc;
 }
 .tiny_ai-icon-button:active {
   background-color: #c5c5c5;
+}
+
+.tiny_ai-audio-player {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid #E8E8EA;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.tiny_ai-audio-player audio {
+  display: none;
+}
+.tiny_ai-audio-player .tiny_ai-play-pause-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #00091E;
+  margin-right: 10px;
+}
+.tiny_ai-audio-player .tiny_ai-play-pause-button i {
+  display: inline-block;
+}
+.tiny_ai-audio-player .tiny_ai-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: #e0e0e0;
+  position: relative;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.tiny_ai-audio-player .tiny_ai-progress-bar .tiny_ai-progress-bar-filled {
+  height: 100%;
+  background: #00091E;
+  width: 0;
+  border-radius: 2px;
+}
+.tiny_ai-audio-player .tiny_ai-progress-bar .tiny_ai-progress-bar-thumb {
+  width: 12px;
+  height: 12px;
+  background: #00091E;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 0;
+  cursor: pointer;
+}
+.tiny_ai-audio-player .tiny_ai-time {
+  min-width: 75px;
+  text-align: right;
+  font-family: "Atkinson Hyperlegible";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #00091E;
+}
+
+.dark .tiny_ai-audio-player {
+  background-color: #00091E;
+  border-color: #D33F01;
+}
+.dark .tiny_ai-audio-player .tiny_ai-play-pause-button {
+  color: #FFF;
+}
+.dark .tiny_ai-audio-player .tiny_ai-time {
+  color: #FFF;
+}
+
+.tiny_ai-result-text {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid #E8E8EA;
+  background: #FFF;
+}
+.tiny_ai-result-text p {
+  margin: 0;
+}
+
+.dark .tiny_ai-result-text {
+  border: 1px solid #D33F01;
+  background: #00091E;
 }

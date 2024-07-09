@@ -1,0 +1,57 @@
+{
+    "modal_headline": "Wobei soll Dir die KI helfen?",
+    "show_header": true,
+    "show_audio_suggestion": false,
+    "show_audio": false,
+    "show_dismiss": true,
+    "show_loading": false,
+    "show_start": false,
+    "show_suggestion": false,
+    "show_summarize": false,
+    "show_textarea": false,
+    "show_translate": false,
+    "show_footer_generate": false,
+    "show_footer_info": false,
+    "show_footer_replace": false,
+    "showIcon": true,
+    "input": [
+        {
+            "iconname": "sparkle",
+            "button": [
+                {
+                    "btn-iconname": "arrow-right",
+                    "icon-left": false,
+                    "icon-right": true
+                }
+            ]
+        }
+    ],
+    "footer_iconbuttons": [
+        {
+            "iconName": "trash"
+        },
+        {
+            "iconName": "arrows-rotate"
+        }
+    ],
+    "footer_buttons": [
+        {
+            "hasText": true,
+            "button-text": "Unten einfügen",
+            "btn-iconname": "text-insert-last",
+            "icon-left": true,
+            "icon-right": false,
+            "secondary": true
+        },
+        {
+            "hasText": true,
+            "button-text": "Auswahl ersetzen",
+            "btn-iconname": "check",
+            "icon-left": true,
+            "icon-right": false,
+            "primary": true
+        }
+    ],
+    "infoText": "Die KI kann Fehler machen.",
+    "resultText": "Hier steht ein Satz in einfacher und lustiger Sprache: Markierte Text."
+}

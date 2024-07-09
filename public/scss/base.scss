@@ -4,7 +4,7 @@
     font-family: 'Tiny AI Icons';
     font-style: normal;
     font-weight: 400;
-    src: url([[font:tiny_ai|tiny_ai_icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url([[font:tiny_ai|tiny-ai-icons.woff]]) format("woff"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 [class^='icon-tiny_ai_'],
@@ -29,14 +29,8 @@
 .icon-tiny_ai_extend:before {
     content: '\e901';
 }
-.icon-tiny_ai_audio:before {
-    content: '\e902';
-}
-.icon-tiny_ai_image:before {
-    content: '\e903';
-}
-.icon-tiny_ai_pen:before {
-    content: '\e904';
+.icon-tiny_ai_text-insert-last:before {
+    content: "\e902";
 }
 .icon-tiny_ai_sparkle:before {
     content: '\e905';

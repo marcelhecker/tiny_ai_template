@@ -1,7 +1,7 @@
 <button class="tiny_ai-button {{#btn-iconname}}has-icon {{/btn-iconname}}{{#disabled}}disabled {{/disabled}}{{#primary}}primary {{/primary}}{{#secondary}}secondary {{/secondary}}{{#tertiary}}tertiary {{/tertiary}}">
 
     {{#icon-left}}
-        <i class="fa-light fa-{{btn-iconname}} tiny_ai-icon-left"></i>
+        {{> ai-icon}}
     {{/icon-left}}
 
     {{#hasText}}
@@ -9,6 +9,6 @@
     {{/hasText}}
     
     {{#icon-right}}
-        <i class="fa-light fa-{{btn-iconname}} tiny_ai-icon-right"></i>
+        {{> ai-icon}}
     {{/icon-right}}
 </button>

@@ -30,7 +30,8 @@
             color: $neutral-grey-200;
         }
 
-        [class^="icon-tiny_ai_"] {
+        [class^="icon-tiny_ai_"],
+        [class^="fa-"] {
             color: $neutral-grey-200;
         }
     }
@@ -57,7 +58,9 @@
         font-weight: 400;
     }
 
-    [class^="icon-tiny_ai_"] {
+    [class^="icon-tiny_ai_"],
+    [class^="fa-"] {
+        font-size: 24px;
         color: $neutral-grey-500;
     }
 
@@ -90,7 +93,8 @@
                 color: $neutral-grey-300;
             }
 
-            [class^="icon-tiny_ai_"] {
+            [class^="icon-tiny_ai_"],
+            [class^="fa-"] {
                 color: $neutral-grey-300;
             }
         }
@@ -100,7 +104,8 @@
             color: $neutral-white;
         }
 
-        [class^="icon-tiny_ai_"] {
+        [class^="icon-tiny_ai_"],
+        [class^="fa-"] {
             color: $neutral-white;
         }
     }
