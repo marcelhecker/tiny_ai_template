@@ -14,6 +14,7 @@
     "show_footer_info": false,
     "show_footer_replace": false,
     "showIcon": true,
+    "centerContent": true,
     "customicon": true,
     "iconname": "sparkle",
 

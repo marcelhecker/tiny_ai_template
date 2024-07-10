@@ -37,7 +37,7 @@
     }
 
     &:hover {
-        background-color: #c9302c;
+        background-color: $lernplattform-500;
     }
 
     &.left {
@@ -84,7 +84,7 @@
             color: $neutral-white;
 
             &:hover {
-                background-color: #c9302c;
+                background-color: $lernplattform-500;
             }
         }
 

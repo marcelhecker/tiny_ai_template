@@ -14,7 +14,6 @@
     border-radius: 4px;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
 
     audio {
         display: none;
@@ -37,7 +36,7 @@
     .tiny_ai-progress-bar {
         flex: 1;
         height: 4px;
-        background: #e0e0e0;
+        background: $neutral-grey-100;
         position: relative;
         margin: 0 10px;
         cursor: pointer;

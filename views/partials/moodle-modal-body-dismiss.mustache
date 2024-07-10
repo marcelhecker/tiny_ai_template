@@ -1,12 +1,10 @@
-
+{{> ai-icon}}
+<h5 class="tiny_ai-headline">{{modal_headline}}</h5>
 <div class="row">
-    <div class="col-lg-12 text-center">
-        {{> ai-icon}}
-        <h5 class="tiny_ai-headline">{{modal_headline}}</h5>
-        <div class="row">
-            {{#buttons}}
-                {{> ai-button}}
-            {{/buttons}}
+    {{#buttons}}
+        <div class="col text-center d-flex justify-content-center">
+            {{> ai-button}}
         </div>
-    </div>
+    {{/buttons}}
 </div>
+

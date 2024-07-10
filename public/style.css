@@ -153,10 +153,10 @@
 .tiny_ai-input-container {
   display: flex;
   align-items: center;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #E8E8EA;
   border-radius: 8px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #FFF;
   position: relative;
 }
 .tiny_ai-input-container.has-error {
@@ -346,7 +346,7 @@
   font-size: 20px;
 }
 .tiny_ai-button:hover {
-  background-color: #c9302c;
+  background-color: #A93201;
 }
 .tiny_ai-button.left .tiny_ai-icon-left {
   margin-right: 8px;
@@ -379,7 +379,7 @@
   color: #FFF;
 }
 .dark .tiny_ai-button.secondary:hover {
-  background-color: #c9302c;
+  background-color: #A93201;
 }
 .dark .tiny_ai-button.tertiary {
   background-color: unset;
@@ -519,7 +519,7 @@
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: #fffbe6;
+  background-color: #FFF8E0;
   border-radius: 4px;
   color: #00091E;
   font-family: "Atkinson Hyperlegible";
