@@ -297,18 +297,21 @@
   color: #60616D;
 }
 
-.tiny_ai-modal .modal-dialog {
+.tiny_ai--dialog {
   max-width: 640px;
 }
 
-.tiny_ai-modal-content {
+.tiny_ai--dialog {
   background: #FFF;
   border-radius: 8px;
   padding: 0px;
   position: relative;
   border: 1px solid #E8E8EA;
 }
-.tiny_ai-modal-content .tiny_ai-modal--header {
+.tiny_ai--dialog .modal-content {
+  border: none;
+}
+.tiny_ai--dialog .tiny_ai-modal--header {
   padding: 24px 24px 16px 24px;
   border: 0;
   display: flex;
@@ -316,14 +319,14 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.tiny_ai-modal-content .tiny_ai-modal--header .tiny_ai-headline-wrapper {
+.tiny_ai--dialog .tiny_ai-modal--header .tiny_ai-headline-wrapper {
   display: flex;
 }
-.tiny_ai-modal-content .tiny_ai-modal--header .icon-tiny_ai_sparkle {
+.tiny_ai--dialog .tiny_ai-modal--header .icon-tiny_ai_sparkle {
   align-content: center;
   margin-right: 8px;
 }
-.tiny_ai-modal-content .tiny_ai-modal--header .close {
+.tiny_ai--dialog .tiny_ai-modal--header .close {
   align-self: start;
   background: none;
   border: none;
@@ -331,25 +334,25 @@
   cursor: pointer;
   line-height: 1;
 }
-.tiny_ai-modal-content .tiny_ai-modal--body {
+.tiny_ai--dialog [data-region=body] {
   display: flex;
   padding: 8px 24px 0px 24px;
   flex-direction: column;
   gap: 24px;
 }
-.tiny_ai-modal-content .tiny_ai-modal--body .tiny_ai-modal--button-wrapper {
+.tiny_ai--dialog [data-region=body] .tiny_ai-modal--button-wrapper {
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
   align-self: stretch;
   flex-wrap: wrap;
 }
-.tiny_ai-modal-content .tiny_ai-modal--bottom {
+.tiny_ai--dialog [data-region=footer] {
   padding: 16px 24px;
   border: 0;
   text-align: center;
 }
-.tiny_ai-modal-content .tiny_ai-modal--bottom .usage-info {
+.tiny_ai--dialog [data-region=footer] .tiny_ai-usage-info {
   margin: 0;
   text-align: right;
   color: #60616D;
@@ -360,16 +363,13 @@
   line-height: 16px; /* 133.333% */
 }
 
-.dark .tiny_ai-modal,
-.dark .tiny_ai-modal .modal-content {
+.dark .tiny_ai--dialog {
   background: #00091E;
 }
-.dark .tiny_ai-modal .tiny_ai-modal--header .close,
-.dark .tiny_ai-modal .modal-content .tiny_ai-modal--header .close {
+.dark .tiny_ai--dialog .tiny_ai-modal--header .close {
   color: #FFF;
 }
-.dark .tiny_ai-modal .tiny_ai-modal--bottom .usage-info,
-.dark .tiny_ai-modal .modal-content .tiny_ai-modal--bottom .usage-info {
+.dark .tiny_ai--dialog [data-region=footer] .tiny_ai-usage-info {
   color: #A4A5AC;
 }
 

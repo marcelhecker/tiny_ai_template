@@ -1,13 +1,17 @@
-.tiny_ai-modal .modal-dialog {
+.tiny_ai--dialog {
     max-width: 640px;
 }
 
-.tiny_ai-modal-content {
+.tiny_ai--dialog {
     background: $neutral-white;
     border-radius: 8px;
     padding: 0px;
     position: relative;
     border: 1px solid $neutral-grey-100;
+
+    .modal-content {
+        border: none;
+    }
 
     .tiny_ai-modal--header {
         padding: 24px 24px 16px 24px;
@@ -36,7 +40,7 @@
         }
     }
     
-    .tiny_ai-modal--body {
+    [data-region="body"] {
         display: flex;
         padding: 8px 24px 0px 24px;
         flex-direction: column;
@@ -51,12 +55,12 @@
         }
     }
 
-    .tiny_ai-modal--bottom {
+    [data-region="footer"] {
         padding: 16px 24px;
         border: 0;
         text-align: center;
 
-        .usage-info {
+        .tiny_ai-usage-info {
             margin: 0;
             text-align: right;
             color: $neutral-grey-300;
@@ -70,8 +74,7 @@
 }
 
 .dark {
-    .tiny_ai-modal,
-    .tiny_ai-modal .modal-content {
+    .tiny_ai--dialog {
         background: $neutral-grey-500;
 
         .tiny_ai-modal--header {
@@ -80,9 +83,9 @@
             }
         }
 
-        .tiny_ai-modal--bottom {
+        [data-region="footer"] {
         
-            .usage-info {
+            .tiny_ai-usage-info {
                 color: $neutral-grey-200;
             }
         }
