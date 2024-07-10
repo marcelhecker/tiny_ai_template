@@ -1,0 +1,39 @@
+{
+    "modal_headline": "Letzten Prompt hier optimieren",
+    "show_audio_suggestion": false,
+    "show_audio": false,
+    "show_dismiss": false,
+    "show_loading": false,
+    "show_start": false,
+    "show_suggestion": false,
+    "show_summarize": false,
+    "show_textarea": true,
+    "show_translate": false,
+    "show_footer_generate": true,
+    "show_footer_info": false,
+    "show_footer_replace": false,
+    "showIcon": true,
+    "placeholder": "Schreibe mir den markierten Satz in einfacher und lustiger Sprache.",
+    "infoText": "23/40 Text-, 1/40 Audio-, 10/20 Bild-Anfragen pro Tag",
+
+    "footer_buttons": [
+        {
+            "hasText": true,
+            "button-text": "Unten einfügen",
+            "icon-left": true,
+            "icon-right": false,
+            "tertiary": true,
+            "iconname": "arrow-left",
+            "iconstyle": "solid"
+        },
+        {
+            "hasText": true,
+            "button-text": "Jetzt generieren",
+            "icon-left": true,
+            "icon-right": false,
+            "primary": true,
+            "iconname": "sparkle",
+            "customicon": true
+        }
+    ]
+}

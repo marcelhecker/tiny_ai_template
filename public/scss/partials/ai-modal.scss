@@ -1,29 +1,21 @@
-.tiny_ai-modal,
-.tiny_ai-modal .modal-content {
+.tiny_ai-modal .modal-dialog {
+    max-width: 640px;
+}
+
+.tiny_ai-modal-content {
     background: $neutral-white;
     border-radius: 8px;
     padding: 0px;
     position: relative;
     border: 1px solid $neutral-grey-100;
 
-    &--header {
+    .tiny_ai-modal--header {
         padding: 24px 24px 16px 24px;
         border: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
-
-        .tiny_ai-modal-title {
-            margin: 0;
-            color: $neutral-grey-500;
-            /* h5/medium */
-            font-family: Lexend;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 30px; /* 150% */
-        }
 
         .tiny_ai-headline-wrapper {
             display: flex;
@@ -35,6 +27,7 @@
         }
 
         .close {
+            align-self: start;
             background: none;
             border: none;
             font-size: 24px;
@@ -43,11 +36,7 @@
         }
     }
     
-    .modal-dialog {
-        max-width: 640px;
-    }
-    
-    &--body {
+    .tiny_ai-modal--body {
         display: flex;
         padding: 8px 24px 0px 24px;
         flex-direction: column;
@@ -62,7 +51,7 @@
         }
     }
 
-    &--bottom {
+    .tiny_ai-modal--bottom {
         padding: 16px 24px;
         border: 0;
         text-align: center;
@@ -85,17 +74,13 @@
     .tiny_ai-modal .modal-content {
         background: $neutral-grey-500;
 
-        &--header {
+        .tiny_ai-modal--header {
             .close {
                 color: $neutral-white;
             }
         }
 
-        .tiny_ai-modal-title {
-            color: $neutral-white;
-        }
-
-        &--bottom {
+        .tiny_ai-modal--bottom {
         
             .usage-info {
                 color: $neutral-grey-200;

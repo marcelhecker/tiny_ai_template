@@ -1,5 +1,5 @@
 {
-    "modal_headline": "Wobei soll Dir die KI helfen?",
+    "modal_headline": "Möchtest du den KI-Vorschlag verwerfen?",
     "show_header": true,
     "show_audio_suggestion": false,
     "show_audio": false,
@@ -14,27 +14,10 @@
     "show_footer_info": false,
     "show_footer_replace": false,
     "showIcon": true,
-    "input": [
-        {
-            "iconname": "sparkle",
-            "button": [
-                {
-                    "btn-iconname": "arrow-right",
-                    "icon-left": false,
-                    "icon-right": true
-                }
-            ]
-        }
-    ],
-    "footer_iconbuttons": [
-        {
-            "iconName": "trash"
-        },
-        {
-            "iconName": "arrows-rotate"
-        }
-    ],
-    "footer_buttons": [
+    "customicon": true,
+    "iconname": "sparkle",
+
+    "buttons": [
         {
             "hasText": true,
             "button-text": "Unten einfügen",
@@ -51,7 +34,5 @@
             "icon-right": false,
             "primary": true
         }
-    ],
-    "infoText": "Die KI kann Fehler machen.",
-    "resultText": "Hier steht ein Satz in einfacher und lustiger Sprache: Markierte Text."
+    ]
 }

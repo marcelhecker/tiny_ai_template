@@ -13,6 +13,7 @@
     "show_footer_info": true,
     "show_footer_replace": false,
     "showIcon": true,
+    "footerInfoText": "23/40 Text-, 1/40 Audio-, 10/20 Bild-Anfragen pro Tag",
 
 
     "input": [

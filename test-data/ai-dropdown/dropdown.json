@@ -1,3 +1,22 @@
 {
-    
+    "dropdown_description": "Beschreibung",
+    "dropdown_default": "Keine Auswahl",
+    "dropdown_options": [
+        {
+            "optionLabel": "Test 1", 
+            "optionValue": "1"
+        },
+        {
+            "optionLabel": "Test 2",
+            "optionValue": "2"
+        },
+        {
+            "optionLabel": "Test 3",
+            "optionValue": "3"
+        },
+        {
+            "optionLabel": "Test 4",
+            "optionValue": "4"
+        }
+    ]
 }

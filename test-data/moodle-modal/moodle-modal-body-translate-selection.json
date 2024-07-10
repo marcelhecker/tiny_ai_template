@@ -1,0 +1,68 @@
+{
+    "modal_headline": "Zusammenfassen des markierten Textes",
+    "show_audio_suggestion": false,
+    "show_audio": false,
+    "show_dismiss": false,
+    "show_loading": false,
+    "show_start": false,
+    "show_suggestion": false,
+    "show_summarize": true,
+    "show_textarea": false,
+    "show_translate": false,
+    "show_footer_generate": true,
+    "show_footer_info": false,
+    "show_footer_replace": false,
+    "showIcon": true,
+    "modal_dropdowns": [
+        {
+            "dropdown_description": "Ausgabesprache",
+            "dropdown_default": "Englisch",
+            "dropdown_options": [
+                {
+                    "optionLabel": "Test 1",
+                    "optionValue": "1"
+                },
+                {
+                    "optionLabel": "Test 2",
+                    "optionValue": "2"
+                },
+                {
+                    "optionLabel": "Test 3",
+                    "optionValue": "3"
+                },
+                {
+                    "optionLabel": "Test 4",
+                    "optionValue": "4"
+                }
+            ]
+        }
+    ],
+    "hasText": true,
+    "button-text": "Prompt anzeigen",
+    "icon-left": true,
+    "icon-right": false,
+    "tertiary": true,
+    "iconname": "eye",
+    "iconstyle": "solid",
+    "infoText": "23/40 Text-, 1/40 Audio-, 10/20 Bild-Anfragen pro Tag",
+    "footer_buttons": [
+        {
+            "hasText": true,
+            "button-text": "Unten einfügen",
+            "icon-left": true,
+            "icon-right": false,
+            "tertiary": true,
+            "iconname": "arrow-left",
+            "iconstyle": "solid"
+        },
+        {
+            "hasText": true,
+            "button-text": "Jetzt generieren",
+            "icon-left": true,
+            "icon-right": false,
+            "primary": true,
+            "iconname": "sparkle",
+            "customicon": true
+        }
+    ]
+}
